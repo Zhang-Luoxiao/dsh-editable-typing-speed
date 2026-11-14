@@ -1,18 +1,21 @@
 # dsh-editable-typing-speed
 
-让 IM 机器人的回话**一条一条地**发出来，并且先「读」一会儿再回——只做节奏这一件事的独立插件。
+让机器人的回话**一条一条地**发出来，只做节奏的独立插件。
 
-它不 fork `dsh-im`，而是挂在渠道 SDK 的收发口上：装/卸本插件都在你的 profile 里，`dsh-im`（含 `@johnnren/dsh-im-humanize`）照常升级。
+它不 fork `dsh-im`，而是挂在渠道 SDK 的收发口上：
+
+装/卸本插件都在你的 profile 里，`dsh-im`（含 `@johnnren/dsh-im-humanize`）照常升级。
 
 ## 三个旋钮
 
 | 旋钮 | 作用 | 参数 |
 | --- | --- | --- |
-| `readDelay` 读延迟 | 收到消息后先静默一会儿再发第一条，像“过一会儿才看到” | `baseMs` 固定反应时间、`minCharsPerSecond`–`maxCharsPerSecond` **阅读速度区间**、`maxTotalMs` 封顶 |
-| `segmentGap` 段间隔 | 拆出来的两条之间的停顿，像“正在打下一条” | `baseMs` 固定停顿、`minCharsPerSecond`–`maxCharsPerSecond` **打字速度区间**、`maxTotalMs` 封顶 |
-| `split` 拆条 | 一条回复怎么变成几条 | `minChars` 短于它不拆、`maxSegments` 最多几条、`sentences` 按句末标点、`paragraphs` 按空行、`protectCodeAndTables` 代码块/表格整条不拆 |
+| `readDelay` 读延迟 | 收到消息后先静默一会儿发，“过一会儿才看到” | `baseMs` 固定反应时间、`minCharsPerSecond`–`maxCharsPerSecond` **阅读速度区间**、`maxTotalMs` 封顶 |
+| `segmentGap` 段间隔 | 拆出来的停顿，“正在打下一条” | `baseMs` 固定停顿、`minCharsPerSecond`–`maxCharsPerSecond` **打字速度区间**、`maxTotalMs` 封顶 |
+| `split` 拆条 | 一条回复变成几条 | `minChars` 短于它不拆、`maxSegments` 最多几条、`sentences` 按句末标点、`paragraphs` 按空行、`protectCodeAndTables` 代码块/表格整条不拆 |
 
-**随机只发生在速度上**：每个回合在速度区间里随机取一个速度，时间由字数算出来；`baseMs` 是固定的反应/停顿，不参与随机。
+**随机只发生在速度上**：每个回合在速度区间里随机取一个速度，时间由字数算出来；
+`baseMs` 是固定的反应/停顿，不参与随机。
 
 ```
 读延迟 = baseMs + 用户消息字数 ÷ uniform(阅读速度下限, 上限) × 1000   ≤ maxTotalMs
