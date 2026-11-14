@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-editable-typing-speed
+      name: 'dsh-editable-typing-speed'
+      config: {}

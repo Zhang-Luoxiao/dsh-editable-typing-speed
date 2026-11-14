@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "title": {
+    "en": "dsh-editable-typing-speed",
+    "zh": "可调打字速度"
+  },
+  "description": {
+    "en": "Humanized send pacing for DSH IM replies: editable reading delay, typing speed and randomized gaps.",
+    "zh": "把 IM 回复拆成几条按随机间隔发出：可调阅读延迟、打字速度与条间停顿。"
+  },
+  "metadata": {
+    "categories": [],
+    "labels": [],
+    "sortKeys": {}
+  },
+  "plugins": [
+    {
+      "name": "dsh-editable-typing-speed",
+      "title": "dsh-editable-typing-speed",
+      "description": {
+        "en": "Humanized send pacing for DeepSeek Harness IM replies: editable reading delay, typing speed and randomized gaps.",
+        "zh": "IM 回话拟人化节奏：可调阅读延迟、打字速度与随机间隔，按句拆条。"
+      },
+      "author": "Zhang-Luoxiao <355371478+Zhang-Luoxiao@users.noreply.github.com>",
+      "repository": {
+        "url": "https://github.com/Zhang-Luoxiao/dsh-editable-typing-speed"
+      },
+      "versions": [
+        {
+          "version": "0.4.5",
+          "publishTimestamp": 1794573936,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/Zhang-Luoxiao/dsh-editable-typing-speed",
+            "commit": "c33891c5cfeea52b0113fd667d5609faac495cad"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.1"
+          }
+        }
+      ]
+    }
+  ]
+}

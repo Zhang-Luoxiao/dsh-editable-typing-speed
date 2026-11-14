@@ -1,0 +1,67 @@
+{
+  "name": "dsh-editable-typing-speed",
+  "version": "0.4.5",
+  "type": "module",
+  "description": "Humanized send pacing for DeepSeek Harness IM replies: editable reading delay, typing speed and randomized gaps.",
+  "license": "MIT",
+  "author": "Zhang-Luoxiao <355371478+Zhang-Luoxiao@users.noreply.github.com>",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "im",
+    "qq",
+    "humanize",
+    "pacing",
+    "typing-speed",
+    "delay"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "index.json",
+    "LICENSE",
+    "README.md",
+    "AI-DECLARATION.md",
+    "PUBLISHING.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "verify": "node scripts/verify-manifest.mjs",
+    "index": "node scripts/build-index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zhang-Luoxiao/dsh-editable-typing-speed.git"
+  },
+  "homepage": "https://github.com/Zhang-Luoxiao/dsh-editable-typing-speed#readme",
+  "bugs": {
+    "url": "https://github.com/Zhang-Luoxiao/dsh-editable-typing-speed/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ]
+    }
+  }
+}

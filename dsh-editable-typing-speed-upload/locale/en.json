@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Humanized send pacing",
+    "description": "Splits IM replies into several messages sent at randomized intervals, with reading and typing time scaled by character count."
+  }
+}
